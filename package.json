@@ -12,6 +12,11 @@
     "unit-test": "nyc --reporter=html --reporter=text ava",
     "lint": "eslint ."
   },
+  "nyc": {
+    "exclude": [
+      "test/**/*.js"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rweda/gitlab-external-status.git"
@@ -22,12 +27,19 @@
     "url": "https://github.com/rweda/gitlab-external-status/issues"
   },
   "homepage": "https://github.com/rweda/gitlab-external-status#readme",
+  "engines": {
+    "node": ">=7.0.0"
+  },
   "devDependencies": {
     "@codelenny/eslint-rules": "^0.1.0",
     "ava": "^0.19.1",
     "eslint": "^3.19.0",
+    "lodash.random": "^3.2.0",
+    "nock": "^9.0.13",
     "npm-run-all": "^4.0.2",
-    "nyc": "^11.0.2"
+    "nyc": "^11.0.2",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   },
   "dependencies": {
     "chalk": "^1.1.3",

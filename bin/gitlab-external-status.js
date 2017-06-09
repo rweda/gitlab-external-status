@@ -34,13 +34,6 @@ cli
     `The private or personal access token for GitLab authentication.  Defaults to ${defVar("GITLAB_TOKEN")}.`,
     process.env.GITLAB_TOKEN);
 
-/**
- * @todo Write and implement command to send a non-shield result to GitLab.
-*/
-
-/**
- * @todo Support all custom badge options: http://shields.io/#your-badge
-*/
 cli
   .command("shield")
   .description("Shortcut to create a build result referencing 'shields.io'.")
@@ -51,11 +44,7 @@ cli
   .option("--shield-style [style]", `The style of the shield.  One of [${shieldStyles.join(", ")}].`)
   .action(opts => {
     const status = new ExternalStatus(cli);
-    status.shield(merge({}, {
-      shieldLabel: cli.name,
-      shieldStatus: cli.description,
-      shieldColor: status.colorForState(cli.state),
-    }, opts));
+    status.shield(merge({}, opts, cli));
   })
   .on("--help", () => {
     console.log(`
