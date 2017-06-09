@@ -4,9 +4,28 @@ node_js:
   - 8
   - node
 
+env:
+  global:
+    - DEPLOY_BRANCH="master"
+    - SOURCE_DIR="public"
+    - TARGET_BRANCH="gh-pages"
+    - SSH_KEY="id_rsa"
+    - GIT_NAME="RWEDA Bot"
+    - GIT_EMAIL="rwedabot@redwoodeda.com"
+
+branches:
+  except:
+    - gh-pages
+
 before_script:
   - openssl aes-256-cbc -K $encrypted_2175655a206c_key -iv $encrypted_2175655a206c_iv -in id_rsa.enc -out id_rsa -d
 
 script:
   - npm run lint
   - npm run unit-test
+  - npm run docs
+  - mkdir -p public/
+  - cp -r docs/ public/
+  - cp -r assets/ public/docs/
+  - cp -r coverage/ public/
+  - $(npm bin)/gh-pages-travis

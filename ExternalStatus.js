@@ -25,7 +25,7 @@ const { URL } = require("url");
 */
 
 /**
- * Options to configure sending shields via {@link ExternalStatus#shield}
+ * Options to configure sending shields via {@link ExternalStatus#shield}.  Extends {@link ExternalStatusOptions}.
  * @see https://shields.io/
  * @typedef {ExternalStatusOptions} ExternalStatusShieldOptions
  * @property {String} [shieldLabel] the text on the left side of the shield.  Defaults to the `name` given.

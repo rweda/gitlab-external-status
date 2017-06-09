@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "npm-run-all lint unit-test",
+    "docs": "jsdoc -c jsdoc.json",
     "unit-test": "nyc --reporter=html --reporter=text ava",
     "lint": "eslint ."
   },
@@ -33,7 +34,10 @@
   "devDependencies": {
     "@codelenny/eslint-rules": "^0.1.0",
     "ava": "^0.19.1",
+    "docdash": "^0.4.0",
     "eslint": "^3.19.0",
+    "gh-pages-travis": "^1.0.4",
+    "jsdoc": "^3.4.3",
     "lodash.random": "^3.2.0",
     "nock": "^9.0.13",
     "npm-run-all": "^4.0.2",
