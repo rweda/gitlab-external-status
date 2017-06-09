@@ -41,7 +41,7 @@ cli
     `The label to add on the left side of the shield.  Defaults to ${defArg("--name")}`)
   .option("--shield-status [text]", `The right-hand side of the shield.  Defaults to ${defArg("--description")}`)
   .option("--shield-color [color]", `The default background color of the shield.  Uses ${defArg("--state")} by default`)
-  .option("--shield-style [style]", `The style of the shield.  One of [${shieldStyles.join(", ")}].`)
+  //.option("--shield-style [style]", `The style of the shield.  One of [${shieldStyles.join(", ")}].`)
   .action(opts => {
     const status = new ExternalStatus(cli);
     status.shield(merge({}, opts, cli));
