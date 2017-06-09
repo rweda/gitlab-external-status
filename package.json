@@ -1,0 +1,32 @@
+{
+  "name": "gitlab-external-status",
+  "version": "0.0.0",
+  "description": "Add extra details to a GitLab CI pipeline.",
+  "main": "ExternalStatus.js",
+  "bin": {
+    "gitlab-external-status": "bin/gitlab-external-status.js",
+    "build-status": "bin/gitlab-external-status.js"
+  },
+  "scripts": {
+    "test": "npm-run-all lint unit-test",
+    "unit-test": "nyc --reporter=html --reporter=text ava",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rweda/gitlab-external-status.git"
+  },
+  "author": "Redwood EDA (http://redwoodeda.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rweda/gitlab-external-status/issues"
+  },
+  "homepage": "https://github.com/rweda/gitlab-external-status#readme",
+  "devDependencies": {
+    "@codelenny/eslint-rules": "^0.1.0",
+    "ava": "^0.19.1",
+    "eslint": "^3.19.0",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^11.0.2"
+  }
+}
