@@ -13,3 +13,9 @@ $(npm bin)/build-status shield --name "Lint" --desc "2 Warnings, 0 Failures" \
 
 ![Sample Output](assets/shield-status.png)
 *Inline shield powered by TamperMonkey script 'Inline Shields.io'*.
+
+## CLI Usage
+
+![script usage](https://rweda.github.io/gitlab-external-status/docs/cli-help.png)
+
+![script `shield` usage](https://rweda.github.io/gitlab-external-status/docs/cli-shield-help.png)

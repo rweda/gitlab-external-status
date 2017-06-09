@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "npm-run-all lint unit-test",
-    "docs": "jsdoc -c jsdoc.json",
+    "docs": "jsdoc -c jsdoc.json && test/helpers/screenshot-help.sh",
     "unit-test": "nyc --reporter=html --reporter=text ava",
     "lint": "eslint ."
   },
@@ -43,7 +43,8 @@
     "npm-run-all": "^4.0.2",
     "nyc": "^11.0.2",
     "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.1",
+    "sh2png": "^1.1.0"
   },
   "dependencies": {
     "chalk": "^1.1.3",
