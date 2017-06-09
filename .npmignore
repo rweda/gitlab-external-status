@@ -1,2 +1,4 @@
 .eslint*
 test/
+.nyc_output/
+coverage/
