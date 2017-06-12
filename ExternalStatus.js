@@ -140,16 +140,22 @@ class ExternalStatus {
     if(opts.debug) {
       console.log(`Making request to ${uri}`);
     }
+    const qs = merge({
+      ref: opts.ref,
+      name: opts.name,
+      state: opts.state,
+      description: opts.desc,
+      target_url: opts.url,
+    }, opts.query);
+    if(opts.debug) {
+      for (var k in qs) {
+        console.log(`${k}: ${qs[k]}`);
+      }
+    }
     return request({
       method: "POST",
       uri,
-      qs: merge({
-        ref: opts.ref,
-        name: opts.name,
-        state: opts.state,
-        description: opts.desc,
-        target_url: opts.url,
-      }, opts.query),
+      qs,
       headers: {
         "PRIVATE-TOKEN": opts.token,
       },
