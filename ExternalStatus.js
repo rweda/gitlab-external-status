@@ -94,7 +94,7 @@ class ExternalStatus {
     if(typeof str !== "string" || typeof str.replace !== "function") {
       throw new TypeError(`ExternalStatus#shieldEscape must be given a string.  Given ${typeof str} '${str}'.`);
     }
-    return str.replace("_", "__").replace(" ", "_").replace("-", "--");
+    return str.replace(/_/g, "__").replace(/\s/g, "_").replace(/-/g, "--");
   }
 
   /**
@@ -148,7 +148,7 @@ class ExternalStatus {
       target_url: opts.url,
     }, opts.query);
     if(opts.debug) {
-      for (var k in qs) {
+      for (const k in qs) {
         console.log(`${k}: ${qs[k]}`);
       }
     }
