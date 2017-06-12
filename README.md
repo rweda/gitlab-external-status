@@ -6,6 +6,8 @@ Add extra details to a GitLab CI pipeline.
 
 ## Example
 
+(`$GITLAB_TOKEN` has already been set to a GitLab personal access token)
+
 ```bash
 $(npm bin)/build-status shield --name "Lint" --desc "2 Warnings, 0 Failures" \
   --shield-color "orange"
