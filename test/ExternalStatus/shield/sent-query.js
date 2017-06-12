@@ -38,7 +38,7 @@ test("defaults from standard options,", queryMacro, "target_url",
   "https://img.shields.io/badge/Test-Message-brightgreen.svg",
   {
     name: "Test",
-    description: "Message",
+    desc: "Message",
     state: "success",
   }
 );
