@@ -128,6 +128,12 @@ class ExternalStatus {
   */
   status(opts) {
     opts = merge({}, this.opts, defaultOptions, this.opts, opts);
+    if(typeof opts.token !== "string") {
+      console.warn(`[WARN] Not given a private token to use for GitLab authentication (given ${typeof opts.token})`);
+    }
+    else if(opts.token.length < 5) {
+      console.warn(`[WARN] Token for private authentication is very short (${opts.token.length} characters).`);
+    }
     const domain = new URL(opts.gitlab).origin;
     const uri = new URL(`${domain}/api/v4/projects/${opts.project}/statuses/${opts.commit}`).href;
     return request({
