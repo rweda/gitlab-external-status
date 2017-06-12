@@ -90,6 +90,9 @@ class ExternalStatus {
    * @return {String} the input string with special characters replaced.
   */
   static shieldEscape(str) {
+    if(typeof str !== "string" || typeof str.replace !== "function") {
+      throw new TypeError(`ExternalStatus#shieldEscape must be given a string.  Given ${typeof str} '${str}'.`);
+    }
     return str.replace("_", "__").replace(" ", "_").replace("-", "--");
   }
 
