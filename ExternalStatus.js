@@ -127,7 +127,7 @@ class ExternalStatus {
    * @todo Write entrypoint in `bin`.
   */
   status(opts) {
-    opts = merge({}, this.opts, defaultOptions, this.opts, opts);
+    opts = merge({}, defaultOptions, this.opts, opts);
     if(typeof opts.token !== "string") {
       console.warn(`[WARN] Not given a private token to use for GitLab authentication (given ${typeof opts.token})`);
     }
