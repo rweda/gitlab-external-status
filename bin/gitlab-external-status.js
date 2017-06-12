@@ -44,7 +44,12 @@ cli
   //.option("--shield-style [style]", `The style of the shield.  One of [${shieldStyles.join(", ")}].`)
   .action(opts => {
     const status = new ExternalStatus(cli);
-    status.shield(merge({}, opts, cli));
+    status
+      .shield(merge({}, opts, cli))
+      .catch(err => {
+        console.error(err.stack || err);
+        process.exit(1);
+      });
   })
   .on("--help", () => {
     console.log(`
