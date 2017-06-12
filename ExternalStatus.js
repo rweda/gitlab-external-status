@@ -94,7 +94,7 @@ class ExternalStatus {
     if(typeof str !== "string" || typeof str.replace !== "function") {
       throw new TypeError(`ExternalStatus#shieldEscape must be given a string.  Given ${typeof str} '${str}'.`);
     }
-    return str.replace(/_/g, "__").replace(/\s/g, "_").replace(/-/g, "--");
+    return str.replace(/_/g, "__").replace(/\s/g, "%20").replace(/-/g, "--");
   }
 
   /**
