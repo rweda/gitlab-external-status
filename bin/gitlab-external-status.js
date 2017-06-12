@@ -11,7 +11,7 @@ function defVar(v) { return `${chalk.green("$" + v)}`; }
 function defArg(a) { return `'${chalk.blue(a)}'`; }
 
 const statuses = [ "pending", "running", "success", "failed", "canceled" ];
-const shieldStyles = [ "plastic", "flat", "flat-squared", "social" ];
+//const shieldStyles = [ "plastic", "flat", "flat-squared", "social" ];
 
 cli
   .option("-n, --name", "The name of the CI stage to add")
