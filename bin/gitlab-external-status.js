@@ -14,7 +14,7 @@ const statuses = [ "pending", "running", "success", "failed", "canceled" ];
 //const shieldStyles = [ "plastic", "flat", "flat-squared", "social" ];
 
 cli
-  .option("-n, --name", "The name of the CI stage to add")
+  .option("-n, --name", "The name of the CI job to add")
   .option("-s, --state [str]", `The build status.  One of [${statuses.join(", ")}]  Defaults to 'success'.`)
   .option("-d, --desc, --description [str]", "The textual description of the build status.")
   .option("-u, --url [url]", "The target URL to link to.")
