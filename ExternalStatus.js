@@ -19,7 +19,7 @@ const { URL } = require("url");
  *   Defaults to `"default"`.
  * @property {String} [name] The name of the job to submit to GitLab.
  * @property {String} [state] The result state of the job.  Defaults to `"success"`.
- * @property {String} [description] A description of the job result.
+ * @property {String} [desc] A description of the job result.
  * @property {String} [url] The target URL that the job links to from GitLab.
  * @property {Object} [query] Custom query-string parameters to include.
 */
@@ -108,7 +108,7 @@ class ExternalStatus {
     opts = merge({}, defaultOptions, this.opts, opts);
     opts = merge({}, {
       shieldLabel: opts.name,
-      shieldStatus: opts.description,
+      shieldStatus: opts.desc,
       shieldColor: this.colorForState(opts.state),
     }, opts);
     const label = this.constructor.shieldEscape(opts.shieldLabel || "");
@@ -137,7 +137,7 @@ class ExternalStatus {
         ref: opts.ref,
         name: opts.name,
         state: opts.state,
-        description: opts.description,
+        description: opts.desc,
         target_url: opts.url,
       }, opts.query),
       headers: {
