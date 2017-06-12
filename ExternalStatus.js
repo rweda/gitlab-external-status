@@ -22,6 +22,7 @@ const { URL } = require("url");
  * @property {String} [desc] A description of the job result.
  * @property {String} [url] The target URL that the job links to from GitLab.
  * @property {Object} [query] Custom query-string parameters to include.
+ * @property {Boolean} [debug] if `true`, prints additional details to the console.
 */
 
 /**
@@ -136,6 +137,9 @@ class ExternalStatus {
     }
     const domain = new URL(opts.gitlab).origin;
     const uri = new URL(`${domain}/api/v4/projects/${opts.project}/statuses/${opts.commit}`).href;
+    if(opts.debug) {
+      console.log(`Making request to ${uri}`);
+    }
     return request({
       method: "POST",
       uri,

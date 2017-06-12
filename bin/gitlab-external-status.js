@@ -35,6 +35,9 @@ cli
     process.env.GITLAB_TOKEN);
 
 cli
+  .option("--debug", "Prints additional information to the console.");
+
+cli
   .command("shield")
   .description("Shortcut to create a build result referencing 'shields.io'.")
   .option("-l, --shield-label [name]",
