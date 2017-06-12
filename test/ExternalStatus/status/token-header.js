@@ -9,8 +9,13 @@ test("passes 'token' parameter as a header", t => {
   const origin = `https://domain${random(1000, 10000)}.com`;
   const status = new ExternalStatus();
   let tokenHeader;
-  const scope = nock(origin)
-    .matchHeader("PRIVATE-TOKEN", (t) => { tokenHeader = t; return true; })
+  const scope = nock(
+    origin,
+    {
+      reqheaders: {
+        "PRIVATE-TOKEN": (t) => { tokenHeader = t; return true; },
+      },
+    })
     .filteringPath(() => "/")
     .post("/", () => true)
     .reply(200);
