@@ -29,7 +29,7 @@ const { URL } = require("url");
  * @see https://shields.io/
  * @typedef {ExternalStatusOptions} ExternalStatusShieldOptions
  * @property {String} [shieldLabel] the text on the left side of the shield.  Defaults to the `name` given.
- * @property {String} [shieldStatus] the text on the right side of the shield.  Defaults to the `description` given.
+ * @property {String} [shieldStatus] the text on the right side of the shield.  Defaults to the `desc` given.
  * @property {String} [shieldColor] the primary background color for the shield.  Defaults to using an appropriate color
  *   for the `state` given.
 */
